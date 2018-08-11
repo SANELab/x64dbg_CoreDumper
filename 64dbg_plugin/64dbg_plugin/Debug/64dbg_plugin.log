@@ -1,0 +1,6 @@
+﻿  plugins.cpp
+c:\program files (x86)\windows kits\8.1\include\um\dbghelp.h(1544): warning C4091: 'typedef ': 변수를 선언하지 않으면 '' 왼쪽은 무시됩니다.
+c:\program files (x86)\windows kits\8.1\include\um\dbghelp.h(3190): warning C4091: 'typedef ': 변수를 선언하지 않으면 '' 왼쪽은 무시됩니다.
+c:\users\sillo\desktop\64dbg_plugin\project\64dbg_plugin\64dbg_plugin\plugins.cpp(93): warning C4101: 'basicinfo' :참조되지 않은 지역 변수입니다.
+  64dbg_plugin.vcxproj -> C:\Users\sillo\Desktop\64dbg_plugin\project\64dbg_plugin\Debug\64dbg_plugin.dll
+  64dbg_plugin.vcxproj -> C:\Users\sillo\Desktop\64dbg_plugin\project\64dbg_plugin\Debug\64dbg_plugin.pdb (Full PDB)
