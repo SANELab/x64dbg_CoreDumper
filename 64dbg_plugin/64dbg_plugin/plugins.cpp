@@ -105,7 +105,22 @@ extern "C" __declspec(dllexport) void CBMENUENTRY(CBTYPE cbType, PLUG_CB_MENUENT
 		GuiSelectionGet(GUI_DISASSEMBLY, &sel);
 		_plugin_logprintf("[YCoreDump] Disasm [ START : 0x%p - END : 0x%p ]\n", sel.start, sel.end);
 		DbgCmdExec("bp VirtualProtect");
-		DbgCmdExec("run /go/r/g");
+
+		if (!DbgCmdExec("run"))
+		{
+			MessageBox(g_hwndDlg, L"[Fail] command run. ", L"YCoreDump", MB_ICONINFORMATION | MB_OK);
+		}
+		else // run이 된 경우
+		{
+			Sleep(3000); // bp 걸려서 멈추기를 기다림
+			_plugin_logprintf("[YCoreDump] In the Else!\n");
+			if (DbgIsRunning) {// Dbg running 체크
+				MessageBox(g_hwndDlg, L"[YCoreDump] In the DbgIsRunning ", L"YCoreDump", MB_ICONINFORMATION | MB_OK);
+			}
+			else {
+				MessageBox(g_hwndDlg, L"[YCoreDump] Fail in the DbgIsRunning.\n Dbg is Stop! ", L"YCoreDump", MB_ICONINFORMATION | MB_OK);
+			}
+		}
 
 		break;
 
